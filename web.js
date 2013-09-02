@@ -4,11 +4,11 @@ app.use(express.logger());
 
 var fs = require('fs');
 var buffer = fs.readFileSync("index.html");
-// var out_string = buffer.toString('utf-8');
+var out_string = buffer.toString('utf-8');
 
 app.get('/', function(request, response) {
 //  response.send('Hello World 2!');
-  response.send(buffer);
+  response.send(out_string);
 });
 
 var port = process.env.PORT || 5000;
